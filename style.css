@@ -1,0 +1,85 @@
+*{ /*selección de todo el contenido HTML*/
+    color:rgb(255, 255, 255);
+    font-family: 'Macondo Swash Caps', cursive;
+}
+
+body{
+    margin: 0;
+    background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+    /* Barra scroll en Firefox */
+    scrollbar-width: thin;          
+    scrollbar-color: #A445B2 #D41872;   
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculadora{
+    display: grid; /*dividir una página en áreas o regiones principales*/
+    grid-template-columns: repeat(4, 75px); /*creamos 4 columnas y cada una tiene 75px*/
+    grid-template-rows: 160px repeat(5, 75px);
+    background-image: linear-gradient(-225deg, #3b3b3b 0%, #646464 29%, #aaaaaa 67%, #646464 100%);
+    padding: 15px;
+    border-radius: 17px;
+    box-shadow: 15px 10px 0px 5px #00000033; /*eje x - eje y - bleur - spread -color negro 33% opacidad*/
+}
+
+button{
+    cursor: pointer; /*cambiar el cursor al pasar por encima*/
+    margin: 5px; /*espacio entre teclas*/
+    padding: 0;
+    border-radius: 15px;
+    font-size: 1.5em;
+    border: none;
+    background-color:rgb(255, 255, 255);
+    color: #000000;
+    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #0000001f; 
+}
+
+button:active{ /*al pulsar el botón, cambia de color*/
+    background-color:rgb(204, 204, 204);
+}
+
+button:focus{ /*al clickar el botón, no aparece un recuadro de selección alrededor*/
+    outline: none;
+}
+
+.pantalla{
+    grid-column: 1/ -1; /*que vaya de 1 a -1 = pantalla completa en la tarjeta*/
+    padding: 16px;
+    display: flex;
+    margin: 10px 10px 20px; /*10px margen arriba y los lados, 20 margen abajo*/
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #001107;
+    border-radius: 15px;
+    text-align: right;
+    justify-content: space-between; /*separar valores por espacio*/
+    word-break: break-all;
+    box-shadow: 0px 0px 0px 10px #00000033;
+}
+
+.col-2{
+    grid-column: span 2; /* expansión (span) a 2 columans*/
+    
+}
+.borrar{
+    background-color: #ee9f71;
+}
+
+#valor-actual{
+    font-size: 1.5em;
+}
+#valor-anterior{
+    font-size: 2em;
+}
+
+footer{
+    color:rgb(255, 255, 255);
+    font-size: 40px;
+    text-align: center;
+}
